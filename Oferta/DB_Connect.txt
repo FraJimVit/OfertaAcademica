@@ -1,0 +1,65 @@
+
+PHP
+<?php
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:proyecto-2.database.windows.net,1433; Database = Oferta Academica", "proy2", "{your_password_here}");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "proy2", "pwd" => "{your_password_here}", "Database" => "Oferta Academica", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:proyecto-2.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
+?>
+
+ADO.NET
+Server=tcp:proyecto-2.database.windows.net,1433;Initial Catalog=Oferta Academica;Persist Security Info=False;User ID=proy2;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+JDBC
+jdbc:sqlserver://proyecto-2.database.windows.net:1433;database=Oferta Academica;user=proy2@proyecto-2;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+
+ODBC
+Driver={ODBC Driver 13 for SQL Server};Server=tcp:proyecto-2.database.windows.net,1433;Database=Oferta Academica;Uid=proy2;Pwd={your_password_here};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;
+
+GO
+// Go connection Sample Code:
+package main
+import (
+	github.com/denisenkom/go-mssqldb
+	database/sql
+	context
+	log
+	fmt
+	errors
+)
+
+var db *sql.DB
+var server = "proyecto-2.database.windows.net"
+var port = 1433
+var user = "proy2"
+var password = "<your_password>"
+var database = "Oferta Academica"
+
+func main() {
+	// Build connection string
+	connString := fmt.Sprintf("server=%s;user id=%s;password=%s;port=%d;database=%s;",
+		server, user, password, port, database)
+	var err error
+	// Create connection pool
+	db, err = sql.Open("sqlserver", connString)
+	if err != nil {
+		log.Fatal("Error creating connection pool: ", err.Error())
+	}
+	ctx := context.Background()
+	err = db.PingContext(ctx)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	fmt.Printf("Connected!")
+}
+
