@@ -8,66 +8,149 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Oferta Academica</title>
+  <title>Oferta</title>
 
-   <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/the-big-picture.css" rel="stylesheet">
-  <link href="css/full-width-pics.css" rel="stylesheet">
-
-	<style>
-		input[type=button], input[type=submit], input[type=reset]
-		.button
-		{
-		  background-color: #271469;
-		  border: none;
-		  color: white;
-		  padding: 10px 25px;
-		  text-decoration: none;
-		  margin: 4px 2px;
-		  cursor: pointer;
-		}
-		.button1 {border-radius: 20px;}
-
-		h1 {text-shadow: 2px 2px #444444;}
-
-	</style>
+  <link href="css/simple-sidebar.css" rel="stylesheet">
 
 </head>
 
 <body>
-  <!-- Page Content -->
-  <section>
-    <div class="container">
 
-      <div class="row">
-        <div class="col-md-6 login-form-1">
+  <div class="d-flex" id="wrapper">
 
-          <form>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Centro: " value="" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Carrera: " value="" />
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Materia: " value="" />
-            </div>
-          </form>
-
-        </div>
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><br></div>
+      <div class="list-group list-group-flush">
+        <a href="Consults.html" class="list-group-item list-group-item-action bg-light">
+        	<br>Consultas<br><br>
+        </a>
+		<a href="Colitions.html" class="list-group-item list-group-item-action bg-light">
+       		<br>Colisiones<br><br>
+       	</a>
+        <a href="Update.html" class="list-group-item list-group-item-action bg-light">
+        	<br>Actualizar BD<br><br>
+        </a>
+		<a><br><br><br><br><br><br><br><br><br></a>
+		<a href="Login.html" class="list-group-item list-group-item-action bg-light">
+			Cerrar Sesión
+		</a>
+		<a><br></a>
       </div>
-
     </div>
-  </section>
+    <!-- /#sidebar-wrapper -->
 
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VzbEtG6wElA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <button class="btn btn-primary" id="menu-toggle">Menú</button>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+			  <img src="images/LogoUDG.png" alt="LogoUDG" height="40" width="30">
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="container-fluid">
+       	<br>
+        	<div class="row">
+       		<div class="col-md-6 login-form-1">
+       		  <form>
+       		  Centro: <br>
+       			<div class="form-group">
+							<td colspan="6">
+								<select name="cup" size="1">
+									<option value="3">   </option>
+									<option value="A">C.U. DE ARTE, ARQ. Y DISEÑO</option>
+									<option value="B">C.U. DE CS. BIOLOGICO Y AGR.</option>
+									<option value="C">C.U. DE CS. ECONOMICO-ADMVAS.</option>
+									<option value="D">C.U. DE CS. EXACTAS E ING.</option>
+									<option value="E">C.U. DE CS. DE LA SALUD</option>
+									<option value="F">C.U. DE CS. SOCIALES Y HUM.</option>
+									<option value="G">C.U. DE LOS ALTOS</option>
+									<option value="H">C.U. DE LA CIENEGA</option>
+									<option value="I">C.U. DE LA COSTA</option>
+									<option value="J">C.U. DE LA COSTA SUR</option>
+									<option value="K">C.U. DEL SUR</option>
+									<option value="M">C. U. DE LOS VALLES</option>
+									<option value="N">C.U. DEL NORTE</option>
+									<option value="O">CUCEI SEDE VALLES</option>
+							  	  	<option value="P">CUCSUR SEDE VALLES</option>
+									<option value="Q">CUCEI SEDE NORTE</option>
+									<option value="R">CUALTOS SEDE NORTE</option>
+							 	  	<option value="S">CUCOSTA SEDE NORTE</option>
+									<option value="T">SEDE TLAJOMULCO</option>
+									<option value="U">C. U. DE LOS LAGOS</option>
+									<option value="V">CICLO DE VERANO</option>
+									<option value="W">CUCEA SEDE VALLE</option>
+							  	  	<option value="X">SIST. DE UNIVERSIDAD VIRTUAL</option>
+									<option value="Y">ESCUELAS INCORPORADAS</option>
+									<option value="Z">C. U. DE TONALA</option>
+							  </select>
+							</td>
+            			</div>
+       			<div class="form-group">
+       				carrera:<br>
+   					<tr>
+   		   				<td><input type="text" size="4" placeholder="Clave:  " value="" maxlength="4"></td>
+						<td><input type="text" size="28" placeholder="Nombre: " value="" maxlength="40"></td>
+					</tr>
+         			<br><br>Materia:<br>
+          			<tr>
+   		   				<td><input type="text" size="5" placeholder="Clave: " value="" maxlength="4"></td>
+						<td><input type="text" size="28" placeholder="Titulo: " value="" maxlength="40"></td>
+					</tr>
+         			<tbody>
+          			<br><br>Horario:<br>
+					<tr>
+						<font size="2">L &nbsp; M &nbsp;Mi &nbsp;J &nbsp; V &nbsp; S</font><br>
+					</tr>
+						<tr>
+						<td><input type="checkbox" name="lup" value="M"></td>
+						<td><input type="checkbox" name="map" value="T"></td>
+						<td><input type="checkbox" name="mip" value="W"></td>
+						<td><input type="checkbox" name="jup" value="R"></td>
+						<td><input type="checkbox" name="vip" value="F"></td>
+						<td><input type="checkbox" name="sap" value="S"></td>
+						</tr>
+						</tbody>
+           		</div>
+           		<div class="form-group">
+              		<input type="submit" class="button button1" value="Consultar" />
+            	</div>
+			</form>
+       		</div>
+      </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
 
 </body>
 
